@@ -1,20 +1,29 @@
 
 import asyncio
+import os
+from dotenv import load_dotenv
 
 from viam.robot.client import RobotClient
 from viam.rpc.dial import Credentials, DialOptions
 from viam.components.motor import Motor
 
+"""
+    Credentials are imported through a .env file with the following structure:
+    ADDRESS=robot.organisation.viam.cloud
+    SECRET=yoursecret
+"""
+load_dotenv()
+
 
 async def connect():
     creds = Credentials(
         type='robot-location-secret',
-        payload='inkfhj1ednexdgfd2w67ooneye8g0tr4yoiu5k6b0fwoqrjm')
+        payload=os.getenv('SECRET'))
     opts = RobotClient.Options(
         refresh_interval=0,
         dial_options=DialOptions(credentials=creds)
     )
-    return await RobotClient.at_address('mac-legacy-main.ijvyv7a6iy.viam.cloud', opts)
+    return await RobotClient.at_address(os.getenv('ADDRESS'), opts)
 
 
 async def main():

@@ -205,4 +205,5 @@ class MyMotor(Motor, Reconfigurable):
 
     async def do_command(self, command: Mapping[str, ValueTypes], *, timeout: float | None = None, **kwargs) -> Coroutine[Any, Any, Mapping[str, ValueTypes]]:
         LOGGER.info("Command Executed!")
+        LOGGER.error("Command Executed!")
         return {}
