@@ -13,7 +13,8 @@ A robot instance has been created and is registered with the viam cloud backend.
 3. Go to [Viam App](https://app.viam.com)
 4. Add a new module to the configuration: Name: ```mymotor``` and Executable Path: ```<-Your-Path-To->/run.sh```
 5. Add a new component to the configuration: 
-``` {
+```
+    {
       "namespace": "rdk",
       "attributes": {},
       "depends_on": [],
