@@ -204,6 +204,9 @@ class MyMotor(Motor, Reconfigurable):
         return True
 
     async def do_command(self, command: Mapping[str, ValueTypes], *, timeout: float | None = None, **kwargs) -> Coroutine[Any, Any, Mapping[str, ValueTypes]]:
-        LOGGER.info("Command Executed!")
-        LOGGER.error("Command Executed!")
+        for (key, value) in command.items():
+            if key == "log":
+                LOGGER.info(f'Info: Command {key} with {value} executed!')
+            else:
+                LOGGER.warning(f'Info: Random command {key}: {value} executed!')
         return {}

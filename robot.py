@@ -34,7 +34,8 @@ async def main():
     mymotor_return_value = await mymotor.is_moving()
     print(f"mymotor is_moving return value: {mymotor_return_value}")
 
-    await mymotor.do_command({})
+    # Custom DoCommand example
+    await mymotor.do_command({"log": "message"})
     print("Check the log entries on app.viam.com!")
 
 
