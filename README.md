@@ -1,6 +1,6 @@
 # Viam Custom Model Example
 
-A simple example of how to implement a custom motor model and how to extend it with a custom DoCommand in Python.
+A simple example of how to implement a custom motor model and how to extend it with a custom DoCommand in Python. To create the file structure and generate the boiler plate code segments, the [Viam Module Generator](https://github.com/viam-labs/generator-viam-module) was used.
 
 ## Prerequisits
 
